@@ -1,4 +1,4 @@
-package tests;
+package tests.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
@@ -20,9 +20,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     WebDriver driver;
-    LoginPage loginPage;
-    ProfilePage profilePage;
-    MyJefitPage myJefitPage;
+    protected LoginPage loginPage;
+    protected ProfilePage profilePage;
+    protected MyJefitPage myJefitPage;
 
 
 
