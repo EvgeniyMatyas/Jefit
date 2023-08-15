@@ -15,11 +15,6 @@ public class ProfilePage extends BasePage{
     public ProfilePage(WebDriver driver) {
         super(driver);
     }
-    @Step("Open the profile page")
-    public ProfilePage openProfilePage(){
-        driver.get(BASE_URL + "my-jefit/profile/");
-        return this;
-    }
 
     @Step("Setting up your profile")
     public MyJefitPage createProfile(){

@@ -12,7 +12,6 @@ import org.testng.annotations.Listeners;
 import pages.LoginPage;
 import pages.MyJefitPage;
 import pages.ProfilePage;
-import pages.SingUpPage;
 import tests.base.TestListener;
 
 import java.util.concurrent.TimeUnit;
@@ -21,7 +20,6 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     WebDriver driver;
-    SingUpPage singUpPage;
     LoginPage loginPage;
     ProfilePage profilePage;
     MyJefitPage myJefitPage;
@@ -40,7 +38,6 @@ public class BaseTest {
         context.setAttribute("driver",driver);
 
 
-        singUpPage = new SingUpPage(driver);
         loginPage = new LoginPage(driver);
         profilePage = new ProfilePage(driver);
         myJefitPage = new MyJefitPage(driver);
