@@ -6,12 +6,12 @@ import elements.Select;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProfilePage extends BasePage{
     public static final By PROFILE_TITTLE = By.xpath("//strong[text()='Setup Your Profile']");
-    public static final By CREATE_PROFILE_BUTTON = By.xpath("//input[contains(@class, 'btn-primary')]");
- // Под регистрацию  public static final By MODAL_WINDOW_TITTLE = By.xpath("//h1[text()=' Welcome to Jefit! ']");
-// Под регистрацию   public static final By DISPLAY_TITTLE = By.xpath("//div[@class = 'reveal-modal-bg']");
+    public static final By CREATE_PROFILE_BUTTON =By.id("finish-basic-setup");
+
     public ProfilePage(WebDriver driver) {
         super(driver);
     }
@@ -22,22 +22,21 @@ public class ProfilePage extends BasePage{
     }
 
     @Step("Setting up your profile")
-    public ProfilePage createProfile(){
+    public MyJefitPage createProfile(){
         new Select(driver,"month").selectDate("January");
         new Select(driver,"dt").selectDate("4");
         new Select(driver,"year").selectDate("1989");
-        new RadioButton(driver,"kg/cm ").clickOnRadioButton();
+        new RadioButton(driver,"1").selectRadioButton();
         new Input(driver,"Height").write("188");
         new Input(driver,"Current Weight").write("89");
-        new RadioButton(driver,"Male").clickOnRadioButton();
+        new RadioButton(driver,"M").selectRadioButton();
         return clickCreateProfileButton();
     }
-
-    public ProfilePage clickCreateProfileButton(){
+    @Step("Click the create profile button")
+    public MyJefitPage clickCreateProfileButton(){
         driver.findElement(CREATE_PROFILE_BUTTON).click();
-        return new ProfilePage(driver);
+        return new MyJefitPage(driver);
     }
-
 
 
     @Override

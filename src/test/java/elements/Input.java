@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 
 public class Input {
-    String inputLocator = "//div[text()='%s']/ancestor::div[contains(@class, 'container-fluid')]//input";
+    String inputLocator = "//div[text()='%s']/ancestor::div[@class='w-100']//input";
 
     WebDriver driver;
     String label;

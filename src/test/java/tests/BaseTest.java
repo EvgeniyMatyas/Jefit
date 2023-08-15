@@ -10,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.LoginPage;
+import pages.MyJefitPage;
 import pages.ProfilePage;
 import pages.SingUpPage;
 import tests.base.TestListener;
@@ -23,6 +24,7 @@ public class BaseTest {
     SingUpPage singUpPage;
     LoginPage loginPage;
     ProfilePage profilePage;
+    MyJefitPage myJefitPage;
 
 
 
@@ -41,6 +43,7 @@ public class BaseTest {
         singUpPage = new SingUpPage(driver);
         loginPage = new LoginPage(driver);
         profilePage = new ProfilePage(driver);
+        myJefitPage = new MyJefitPage(driver);
 
 
 

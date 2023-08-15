@@ -7,9 +7,12 @@ public class ProfileTest extends BaseTest{
     @Test(description = "Checking profile fields with valid data")
     public void profileShouldBeCreated(){
         loginPage.open()
-                .ValidUserNameOrEmailAndPassword("Jamezzusz@mail.ru","77721185948934James*")
-                .clickLogInButton();
-        profilePage.createProfile()
-                .clickCreateProfileButton();
+                .userNameOrEmailAndPassword("znoxezy@mailto.plus","123456789Ja*")
+                .clickLogInButton()
+                        .isPageOpen();
+        profilePage.createProfile();
+        myJefitPage.isPageOpen();
+
+
     }
 }

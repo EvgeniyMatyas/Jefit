@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 
 public class RadioButton {
-    String radioButtonLocator = "//span[text()='%s']/ancestor::div[contains(@class, 'container-fluid')]//input";
+    String radioButtonLocator = "//input[@type = 'radio' and @value = '%s']";
 
     WebDriver driver;
     String label;
@@ -16,7 +16,7 @@ public class RadioButton {
         this.label = label;
     }
 
-    public void clickOnRadioButton() {
+    public void selectRadioButton() {
         driver.findElement(By.xpath(String.format(radioButtonLocator, this.label))).click();
         log.info("Click with label  " + this.label);
     }
