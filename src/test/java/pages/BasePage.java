@@ -11,8 +11,6 @@ public abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
     public static final String BASE_URL = "https://www.jefit.com/";
-    public static final By SING_UP = By.xpath("//div[@class='ast-custom-button' and text()='Sign up']");
-
 
 
     public BasePage(WebDriver driver) {

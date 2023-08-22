@@ -18,7 +18,7 @@ public class LoginPage extends BasePage{
         super(driver);
     }
 
-    @Step("opening the registration page")
+    @Step("opening the Login page")
     public LoginPage open(){
         driver.get(BASE_URL + "login");
         log.info("Open Login page with URL: "+ BASE_URL+"login");
@@ -26,7 +26,7 @@ public class LoginPage extends BasePage{
     }
 
     @Step("Enter Username or Email: '{name}' and Password: '{password}'")
-    public LoginPage userNameOrEmailAndPassword(String name,String password) {
+    public LoginPage userNameAndPassword(String name,String password) {
         driver.findElement(USER_NAME_OR_EMAIL).sendKeys(name);
         log.info("Input the USERNAME or EMAIL in the field: " + name);
         driver.findElement(PASSWORD).sendKeys(password);
@@ -38,6 +38,17 @@ public class LoginPage extends BasePage{
     public ProfilePage clickLogInButton(){
         driver.findElement(LOG_IN_BUTTON).click();
         log.info("Click on LOG IN button with XPath: " + LOG_IN_BUTTON);
+        return new ProfilePage(driver);
+    }
+
+    @Step("Login with valid data")
+    public ProfilePage loginWithValidData(){
+        open();
+        log.info("Open LoginPage");
+        userNameAndPassword("Jamezzusz@mail.ru","77721185948934James*");
+        log.info("Input login and password");
+        clickLogInButton();
+        log.info("Click on LOG IN button");
         return new ProfilePage(driver);
     }
 
