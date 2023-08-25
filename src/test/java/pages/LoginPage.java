@@ -45,7 +45,7 @@ public class LoginPage extends BasePage{
     public ProfilePage loginWithValidData(){
         open();
         log.info("Open LoginPage");
-        userNameAndPassword("Jamezzusz@mail.ru","77721185948934James*");
+        userNameAndPassword("yxobx@mailto.plus","123456789Ja*");
         log.info("Input login and password");
         clickLogInButton();
         log.info("Click on LOG IN button");

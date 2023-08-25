@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.opera.OperaOptions;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -29,8 +30,8 @@ public class BaseTest {
     @Step("Setting up and opening the browser")
     @BeforeMethod
     public void setUp(ITestContext context){
-        WebDriverManager.operadriver().setup();
-        OperaOptions options = new OperaOptions();
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--incognito");
         driver = new ChromeDriver(options);

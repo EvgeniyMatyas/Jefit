@@ -9,7 +9,7 @@ public class LoginTest extends BaseTest {
     @Test(description = "Login verification with valid data")
     public void loginUserIsValidData(){
         boolean isProfilePageOpen = loginPage.open()
-                .userNameAndPassword("Jamezzusz@mail.ru","77721185948934James*")
+                .userNameAndPassword("yxobx@mailto.plus","123456789Ja*")
                 .clickLogInButton()
                 .isPageOpen();
         assertTrue(isProfilePageOpen);
