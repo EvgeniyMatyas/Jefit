@@ -4,8 +4,8 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-@Log4j2
 
+@Log4j2
 public class LoginPage extends BasePage{
 
     public static final By USER_NAME_OR_EMAIL = By.id("navbar_username");
@@ -18,7 +18,7 @@ public class LoginPage extends BasePage{
         super(driver);
     }
 
-    @Step("opening the Login page")
+    @Step("Opening the Login page")
     public LoginPage open(){
         driver.get(BASE_URL + "login");
         log.info("Open Login page with URL: "+ BASE_URL+"login");
@@ -35,31 +35,32 @@ public class LoginPage extends BasePage{
     }
 
     @Step("Click on the LOG IN button")
-    public ProfilePage clickLogInButton(){
+    public MyJefitPage clickLogInButton(){
         driver.findElement(LOG_IN_BUTTON).click();
         log.info("Click on LOG IN button with XPath: " + LOG_IN_BUTTON);
-        return new ProfilePage(driver);
+        return new MyJefitPage(driver);
     }
 
     @Step("Login with valid data")
-    public ProfilePage loginWithValidData(){
+    public MyJefitPage loginWithValidData(){
         open();
         log.info("Open LoginPage");
         userNameAndPassword("yxobx@mailto.plus","123456789Ja*");
         log.info("Input login and password");
         clickLogInButton();
         log.info("Click on LOG IN button");
-        return new ProfilePage(driver);
+        return new MyJefitPage(driver);
     }
 
     @Step("Get an error message")
     public String getErrorMessage() {
-        log.info("Take the error message :" +ERROR_MESSAGE);
+        log.info("Get the error text by :" +ERROR_MESSAGE);
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-    @Step("Make sure that you have gone to the login page")
+
     @Override
+    @Step("Find element to make sure the page is open")
     public boolean isPageOpen() {
         log.info("Find element: " +LOG_IN_BUTTON);
         return isExist(LOG_IN_BUTTON);
