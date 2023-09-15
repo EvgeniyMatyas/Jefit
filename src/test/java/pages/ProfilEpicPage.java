@@ -14,7 +14,7 @@ public class ProfilEpicPage extends BasePage{
 
     public static final By SELECT_FILE_BUTTON = By.id("avatarupload");
     public static final By UPLOAD_BUTTON = By.xpath("//input[@class='picturepostButton']");
-    public static final By PROFILEPIC_TITTLE = By.xpath("//strong[text()='Profile Picture Setup']");
+    public static final By PROFILE_PIC_TITTLE = By.xpath("//strong[text()='Profile Picture Setup']");
 
     public ProfilEpicPage(WebDriver driver) {
         super(driver);
@@ -27,8 +27,8 @@ public class ProfilEpicPage extends BasePage{
         return this;
     }
 
-    @Step("Download an image")
-    public ProfilEpicPage downloadFile(){
+    @Step("Upload an image")
+    public ProfilEpicPage uploadFile(){
         File file = new File("src/test/resources/kachok.jpg");
         driver.findElement(SELECT_FILE_BUTTON).sendKeys(file.getAbsolutePath());
         log.info("Сhoosing a picture : "+ SELECT_FILE_BUTTON+"src/test/resources/kachok.jpg");
@@ -40,7 +40,7 @@ public class ProfilEpicPage extends BasePage{
 
     @Override
     public boolean isPageOpen() {
-        return isExist(PROFILEPIC_TITTLE);
+        return isExist(PROFILE_PIC_TITTLE);
     }
 
 }

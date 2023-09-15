@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Test" parallel="tests" thread-count="2">
-    <test name="запуск в chrome">
-        <parameter name="browser" value="chrome"/>
+<suite thread-count="3" name="Test suite" parallel="tests">
+    <test name="Stream 1">
         <classes>
-            <class name="tests.ProfileTest  "/>
+            <class name="tests.WorkoutPlansTest"/>
+            <class name="tests.SettingsProfileAppTest"/>
+            <class name="tests.SettingsEmailPasswordTest"/>
+            <class name="tests.SettingsMembershipTest"/>
+            <class name="tests.SettingsNotificationPrivacyTest"/>
         </classes>
     </test> <!-- Test -->
 
-
-    <test name="запуск в edge">
-        <parameter name="browser" value="edge"/>
+    <test name="Stream 2">
         <classes>
-            <class name=" tests.LoginTest "/>
+            <class name="tests.ProfilEpicTest"/>
+            <class name="tests.MyRoutinesTest"/>
+            <class name="tests.MyLogsTest"/>
+            <class name="tests.MyJefitTest"/>
+            <class name="tests.EliteTest"/>
         </classes>
     </test> <!-- Test -->
 
+    <test name="Stream 3">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.ExercisesTest"/>
+            <class name="tests.BlogTest"/>
+            <class name="tests.AboutMeTest"/>
+        </classes>
+    </test> <!-- Test -->
 </suite>

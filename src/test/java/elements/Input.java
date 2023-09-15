@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 
 public class Input {
-    String inputLocator = "//div[text()='%s']/ancestor::div[@class='w-100']//input";
-    String aboutMeInputLocator= "//td[normalize-space(text()) = '%s']/ancestor::div[@class='middle730']//input";
+    String inputLocator = "//input[@name = '%s']";
+    String aboutMeInputLocator= " //td[normalize-space(text()) = '%s']/ancestor::tr//input";
 
     WebDriver driver;
     String label;
@@ -29,6 +29,16 @@ public class Input {
         log.info("Clear input with label  " + this.label);
         driver.findElement(By.xpath(String.format(aboutMeInputLocator, this.label))).sendKeys(text);
         log.info("Wtite into input with label: " + this.label + "text: " + text);
+    }
+
+    public void aboutMeClear() {
+        driver.findElement(By.xpath(String.format(aboutMeInputLocator, this.label))).clear();
+        log.info("Clear input with name " + label);
+    }
+
+    public void click() {
+        driver.findElement(By.xpath(String.format(inputLocator, this.label))).click();
+        log.info("Click on input with name " + label);
     }
 }
 

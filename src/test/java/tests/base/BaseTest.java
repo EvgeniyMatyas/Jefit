@@ -11,6 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.*;
+import utils.PropertyReader;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +19,9 @@ import java.util.concurrent.TimeUnit;
 @Listeners(TestListener.class)
 
 public class BaseTest {
-    WebDriver driver;
+    protected WebDriver driver;
+    protected String baseUrl,email,password;
+
     protected LoginPage loginPage;
     protected MyJefitPage myJefitPage;
     protected ProfilEpicPage profilepicPage;
@@ -26,6 +29,17 @@ public class BaseTest {
     protected BodyPartPage bodyPartPage;
     protected AboutMePage aboutMePage;
     protected UserPage userPage;
+    protected MyLogsPage myLogsPage;
+    protected WorkoutPlansPage workoutPlansPage;
+    protected BlogPage blogPage;
+    protected PopularPostPage popularPostPage;
+    protected CategoryPage categoryPage;
+    protected MyRoutinesPage myRoutinesPage;
+    protected ElitePage elitePage;
+    protected SettingsProfileAppPage settingsProfileAppPage;
+    protected SettingsEmailPasswordPage settingsEmailPasswordPage;
+    protected SettingsMembershipPage settingsMembershipPage;
+    protected SettingsNotificationPrivacyPage settingsNotificationPrivacyPage;
 
 
 
@@ -33,13 +47,17 @@ public class BaseTest {
     @Step("Setting up and opening the browser")
     @BeforeMethod
     public void setUp(ITestContext context){
+        baseUrl = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
+        email = System.getenv().getOrDefault("JEFIT_EMAIL", PropertyReader.getProperty("jefit.email"));
+        password = System.getenv().getOrDefault("JEFIT_PASSWORD", PropertyReader.getProperty("jefit.password"));
+
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        options.addArguments("--incognito");
+ //       options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        context.setAttribute("driver",driver);
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+ //       context.setAttribute("driver",driver);
 
 
         loginPage = new LoginPage(driver);
@@ -49,6 +67,17 @@ public class BaseTest {
         bodyPartPage = new BodyPartPage(driver);
         aboutMePage = new AboutMePage(driver);
         userPage = new UserPage(driver);
+        myLogsPage = new MyLogsPage(driver);
+        workoutPlansPage = new WorkoutPlansPage(driver);
+        blogPage = new BlogPage(driver);
+        popularPostPage = new PopularPostPage(driver);
+        categoryPage = new CategoryPage(driver);
+        myRoutinesPage = new MyRoutinesPage(driver);
+        elitePage = new ElitePage(driver);
+        settingsProfileAppPage = new SettingsProfileAppPage(driver);
+        settingsEmailPasswordPage = new SettingsEmailPasswordPage(driver);
+        settingsMembershipPage = new SettingsMembershipPage(driver);
+        settingsNotificationPrivacyPage = new SettingsNotificationPrivacyPage(driver);
 
 
 

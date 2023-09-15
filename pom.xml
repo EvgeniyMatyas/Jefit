@@ -13,7 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>3.141.59</selenium.version>
-        <testing.version>7.8.0</testing.version>
+        <testng.version>7.8.0</testng.version>
         <bonigarcia.version>5.5.0</bonigarcia.version>
         <aspectjweaver.version>1.9.6</aspectjweaver.version>
         <lombok.version>1.18.24</lombok.version>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>${testing.version}</version>
+            <version>${testng.version}</version>
             <scope>compile</scope>
         </dependency>
 

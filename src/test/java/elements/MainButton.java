@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 
 @Log4j2
 
-public class FooterButton {
+public class MainButton {
     WebDriver driver;
     String text;
 
     String footerLocator = "//a[text()='%s']";
-    public FooterButton(WebDriver driver, String text) {
+    public MainButton(WebDriver driver, String text) {
         this.driver = driver;
         this.text = text;
     }

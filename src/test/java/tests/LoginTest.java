@@ -10,7 +10,7 @@ public class LoginTest extends BaseTest {
     @Test(description = "Login verification with valid data")
     public void loginUserIsValidData(){
         boolean isMyJefitPage = loginPage.open()
-                .userNameAndPassword("yxobx@mailto.plus","123456789Ja*")
+                .userNameAndPassword(email,password)
                 .clickLogInButton()
                 .isPageOpen();
 
@@ -21,9 +21,9 @@ public class LoginTest extends BaseTest {
     public Object[][] incorrectLoginTest(){
             return new Object[][]{
                     {"", "", "Invalid username/email or password"},
-                    {"Anakonda&83", "", "Invalid username/email or password"},
-                    {"", "Jok334545**", "Invalid username/email or password"},
-                    {"Anakonda&83", "Jok334545**", "Invalid username/email or password"},
+                    {"yxobx@mailto.plus", "", "Invalid username/email or password"},
+                    {"", "123456789Ja*", "Invalid username/email or password"},
+                    {"Anakonda&83", "Joke334545**", "Invalid username/email or password"},
             };
 
     }

@@ -8,10 +8,11 @@ import static org.testng.Assert.*;
 public class ProfilEpicTest extends BaseTest {
 
     @Test
-    public void downloadPicture() {
+    public void uploadPicture() {
         loginPage.loginWithValidData();
-        profilepicPage.open()
-                        .downloadFile();
+        profilepicPage
+                .open()
+                .uploadFile();
         myJefitPage.open();
         String text = myJefitPage.getTextPictureUploaded();
         assertEquals(text, "Has posted a new profile picture.", "Еhe file didn't load");
