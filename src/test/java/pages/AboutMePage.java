@@ -21,11 +21,11 @@ public class AboutMePage extends BasePage {
     @Step("Open About me page")
     public AboutMePage open() {
         driver.get(BASE_URL + "my-jefit/aboutme/");
-        log.info("Open About Me page");
+        log.info("Open About me page");
         return this;
     }
 
-    @Step("Create {aboutMe}")
+    @Step("Create About me")
     public AboutMePage create(AboutMe aboutMe) {
         new Input(driver, "Location").aboutMeWrite(aboutMe.getLocation());
         new Input(driver, "Occupation").aboutMeWrite(aboutMe.getOccupation());
@@ -43,27 +43,6 @@ public class AboutMePage extends BasePage {
         new TextArea(driver, "Magazines").aboutMeWrite(aboutMe.getMagazines());
         new TextArea(driver, "Movies").aboutMeWrite(aboutMe.getMovies());
         log.info("Create " + aboutMe);
-        return clickSaveButton();
-    }
-
-    @Step("Clear all fields in 'about me'")
-    public AboutMePage clearAllFields() {
-        new Input(driver, "Location").aboutMeClear();
-        new Input(driver, "Occupation").aboutMeClear();
-        new TextArea(driver, "Interests & Hobbies").aboutMeClear();
-        new TextArea(driver, "Why Do You Workout?").aboutMeClear();
-        new TextArea(driver, "How Did You Start?").aboutMeClear();
-        new TextArea(driver, "What Motivates You?").aboutMeClear();
-        new TextArea(driver, "Main Goal").aboutMeClear();
-        new TextArea(driver, "Long Term Goals").aboutMeClear();
-        new TextArea(driver, "Short Term Goals").aboutMeClear();
-        new TextArea(driver, "Music").aboutMeClear();
-        new TextArea(driver, "Food").aboutMeClear();
-        new TextArea(driver, "Supplements").aboutMeClear();
-        new TextArea(driver, "Exercises").aboutMeClear();
-        new TextArea(driver, "Magazines").aboutMeClear();
-        new TextArea(driver, "Movies").aboutMeClear();
-        log.info("Clear all fields in about me and click Save button");
         return clickSaveButton();
     }
 

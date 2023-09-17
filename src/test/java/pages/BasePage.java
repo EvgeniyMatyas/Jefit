@@ -5,7 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import utils.PropertyReader;
 
 
 import java.util.NoSuchElementException;
@@ -15,13 +15,13 @@ import java.util.NoSuchElementException;
 public abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
-    public static final String BASE_URL = "https://www.jefit.com/";
+    public static final String BASE_URL = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
 
 
     public BasePage(WebDriver driver) {
 
         this.driver = driver;
-        wait = new WebDriverWait(driver,15);
+        wait = new WebDriverWait(driver,10);
     }
 
 

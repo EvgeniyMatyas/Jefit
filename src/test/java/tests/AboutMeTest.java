@@ -9,7 +9,8 @@ import static org.testng.Assert.*;
 public class AboutMeTest extends BaseTest {
     @Test(description = "Сreate data about me")
     public void aboutMeCreate() {
-        loginPage.open()
+        loginPage
+                .open()
                 .loginWithValidData();
 
         AboutMe aboutMe = AboutMeFactory.get();

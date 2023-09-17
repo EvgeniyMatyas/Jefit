@@ -15,7 +15,6 @@ public class ExercisesPage extends BasePage{
 
 
     public static final By EXERCISE_TITTLE = By.xpath("//span[@class ='raven-heading-title' and text()='JEFIT Exercise Database']");
-    public  int pageNUMBER_OF_EXERCISE_PER_PAGE = 10;
     String bodyLocator = "//div[@class='col-4 col-md-3 my-3 rounded-border']";
 
     public ExercisesPage(WebDriver driver) {

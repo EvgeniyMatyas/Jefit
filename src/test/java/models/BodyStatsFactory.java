@@ -8,18 +8,18 @@ public class BodyStatsFactory {
 
     public static BodyStats get() {
         return BodyStats.builder()
-                .weight(faker.number().digits(2))
-                .bodyFat(faker.number().digits(2))
-                .height(faker.number().digits(2))
-                .chest(faker.number().digits(2))
-                .waist(faker.number().digits(2))
-                .arms(faker.number().digits(2))
-                .shoulders(faker.number().digits(2))
-                .foreams(faker.number().digits(2))
-                .neck(faker.number().digits(2))
-                .hips(faker.number().digits(2))
-                .thighs(faker.number().digits(2))
-                .calves(faker.number().digits(2))
+                .weight(String.valueOf(faker.number().numberBetween(10,99)))
+                .bodyFat(String.valueOf(faker.number().numberBetween(10,99)))
+                .height(String.valueOf(faker.number().numberBetween(10,99)))
+                .chest(String.valueOf(faker.number().numberBetween(10,99)))
+                .waist(String.valueOf(faker.number().numberBetween(10,99)))
+                .arms(String.valueOf(faker.number().numberBetween(10,99)))
+                .shoulders(String.valueOf(faker.number().numberBetween(10,99)))
+                .foreams(String.valueOf(faker.number().numberBetween(10,99)))
+                .neck(String.valueOf(faker.number().numberBetween(10,99)))
+                .hips(String.valueOf(faker.number().numberBetween(10,99)))
+                .thighs(String.valueOf(faker.number().numberBetween(10,99)))
+                .calves(String.valueOf(faker.number().numberBetween(10,99)))
                 .build();
     }
 }

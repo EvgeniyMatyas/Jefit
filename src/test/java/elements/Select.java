@@ -19,9 +19,7 @@ public class Select {
         this.name = name;
     }
 
-    public Select(WebElement element) {
 
-    }
 
     public void selectRandomOption(){
         WebElement element = driver.findElement(By.xpath(String.format(selectLocator, name)));
@@ -31,6 +29,6 @@ public class Select {
         int randomNumber = ThreadLocalRandom.current().nextInt(0, size);
         select.selectByIndex(randomNumber);
         select.getFirstSelectedOption();
-        log.info("Select random option in select with name " + name);
+        log.info("Select random option " + name);
     }
 }

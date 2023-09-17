@@ -24,7 +24,7 @@ public class BaseTest {
 
     protected LoginPage loginPage;
     protected MyJefitPage myJefitPage;
-    protected ProfilEpicPage profilepicPage;
+    protected ProfilePicPage profilepicPage;
     protected ExercisesPage exercisesPage;
     protected BodyPartPage bodyPartPage;
     protected AboutMePage aboutMePage;
@@ -40,6 +40,7 @@ public class BaseTest {
     protected SettingsEmailPasswordPage settingsEmailPasswordPage;
     protected SettingsMembershipPage settingsMembershipPage;
     protected SettingsNotificationPrivacyPage settingsNotificationPrivacyPage;
+    protected LogWorkoutPage logWorkoutPage;
 
 
 
@@ -53,16 +54,18 @@ public class BaseTest {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
- //       options.addArguments("--headless");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--headless");
+
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
- //       context.setAttribute("driver",driver);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 
 
         loginPage = new LoginPage(driver);
         myJefitPage = new MyJefitPage(driver);
-        profilepicPage = new ProfilEpicPage(driver);
+        profilepicPage = new ProfilePicPage(driver);
         exercisesPage = new ExercisesPage(driver);
         bodyPartPage = new BodyPartPage(driver);
         aboutMePage = new AboutMePage(driver);
@@ -78,6 +81,7 @@ public class BaseTest {
         settingsEmailPasswordPage = new SettingsEmailPasswordPage(driver);
         settingsMembershipPage = new SettingsMembershipPage(driver);
         settingsNotificationPrivacyPage = new SettingsNotificationPrivacyPage(driver);
+        logWorkoutPage = new LogWorkoutPage(driver);
 
 
 

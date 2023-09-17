@@ -37,10 +37,4 @@ public class TextArea {
         log.info("Write " + text + " into Text Area with name " + name);
     }
 
-    public void aboutMeClear() {
-        driver.findElement(By.xpath(String.format(aboutMeTextAreaLocator, this.name))).clear();
-        log.info("Clear all text Text Area with name " + name);
-    }
-
-
 }

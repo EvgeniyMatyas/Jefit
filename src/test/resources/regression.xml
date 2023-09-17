@@ -3,21 +3,22 @@
 <suite thread-count="3" name="Test suite" parallel="tests">
     <test name="Stream 1">
         <classes>
-            <class name="tests.WorkoutPlansTest"/>
+            <class name="tests.ProfilePicTest"/>
             <class name="tests.SettingsProfileAppTest"/>
             <class name="tests.SettingsEmailPasswordTest"/>
             <class name="tests.SettingsMembershipTest"/>
             <class name="tests.SettingsNotificationPrivacyTest"/>
+            <class name="tests.AboutMeTest"/>
         </classes>
     </test> <!-- Test -->
 
     <test name="Stream 2">
         <classes>
-            <class name="tests.ProfilEpicTest"/>
+            <class name="tests.WorkoutPlansTest"/>
             <class name="tests.MyRoutinesTest"/>
             <class name="tests.MyLogsTest"/>
             <class name="tests.MyJefitTest"/>
-            <class name="tests.EliteTest"/>
+            <class name="tests.LogWorkoutTest"/>
         </classes>
     </test> <!-- Test -->
 
@@ -26,7 +27,7 @@
             <class name="tests.LoginTest"/>
             <class name="tests.ExercisesTest"/>
             <class name="tests.BlogTest"/>
-            <class name="tests.AboutMeTest"/>
+            <class name="tests.EliteTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

@@ -13,7 +13,7 @@ Testing of [JEFIT](https://www.jefit.com/login/) website.Popular workout creatin
 
 ### Used technologies:
 
-- Java
+- Java  
 - Selenium
 - Steps
 - Maven
@@ -56,13 +56,15 @@ Testing of [JEFIT](https://www.jefit.com/login/) website.Popular workout creatin
 #### **_-MyJefit page:_**
 
 - Adding a status
-- Opening Body Stats nav-tab
-- Opening Training Stats nav-tab
-- Opening Progress Photos nav-tab
 
 #### **_-MyLogs page:_**
 
 - Selecting and opening a log for the day
+
+#### **_-LogWorkout page:_**
+- Creating a new body stats
+- Creating a  note
+
 
 #### **_-Routine page:_**
 

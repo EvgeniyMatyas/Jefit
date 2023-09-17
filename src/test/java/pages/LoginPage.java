@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.PropertyReader;
 
 @Log4j2
 public class LoginPage extends BasePage{
@@ -21,16 +22,16 @@ public class LoginPage extends BasePage{
     @Step("Opening the Login page")
     public LoginPage open(){
         driver.get(BASE_URL + "login");
-        log.info("Open Login page with URL: "+ BASE_URL+"login");
+        log.info("Open Login page ");
         return this;
     }
 
-    @Step("Enter Username or Email: '{name}' and Password: '{password}'")
+    @Step("Input Username or Email and Password")
     public LoginPage userNameAndPassword(String email,String password) {
         new Input(driver, "vb_login_username").write(email);
-        log.info("Input the USERNAME or EMAIL in the field: " + email);
+        log.info("Input the USERNAME or EMAIL in the field");
         new Input(driver, "vb_login_password").write(password);
-        log.info("Input password: " + password);
+        log.info("Input password " );
         return this;
     }
 
@@ -43,9 +44,8 @@ public class LoginPage extends BasePage{
 
     @Step("Login with valid data")
     public MyJefitPage loginWithValidData(){
-        open();
-        log.info("Open LoginPage");
-        userNameAndPassword("uwucde@mailto.plus","77721185948934James*");
+        userNameAndPassword(System.getenv().getOrDefault("JEFIT_EMAIL", PropertyReader.getProperty("jefit.email")),
+                System.getenv().getOrDefault("JEFIT_PASSWORD", PropertyReader.getProperty("jefit.password")));
         log.info("Input login and password");
         return clickLogInButton();
 
