@@ -100,5 +100,10 @@ Testing of [JEFIT](https://www.jefit.com/login/) website.Popular workout creatin
 
 
 
+## User data
+- jefit.url = https://www.jefit.com/
+- jefit.email = uwucde@mailto.plus
+- jefit.password = 77721185948934James*
+
 
 
