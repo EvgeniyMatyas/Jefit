@@ -9,7 +9,7 @@ public class SettingsEmailPasswordTest extends BaseTest {
 
 
     @Test(description = "Open Email Password Settings page")
-    public void emailPasswordSettingsShouldBeOpenedTest() {
+    public void openEmailPasswordSettings() {
         loginPage
                 .open()
                 .loginWithValidData();

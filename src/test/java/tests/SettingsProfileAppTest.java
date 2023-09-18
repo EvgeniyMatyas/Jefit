@@ -9,7 +9,7 @@ import static org.testng.Assert.*;
 public class SettingsProfileAppTest extends BaseTest {
 
     @Test(description = "Open Profile Settings App")
-    public void profileSettingsAppShouldBeOpenedTest() {
+    public void openProfileSettingsApp() {
         loginPage
                 .open()
                 .loginWithValidData();
@@ -22,7 +22,7 @@ public class SettingsProfileAppTest extends BaseTest {
     }
 
     @Test(description = "Edit data of birth")
-    public void dataOfBirthShouldBeEditingTest() {
+    public void editDataOfBirth() {
         loginPage
                 .open()
                 .loginWithValidData();

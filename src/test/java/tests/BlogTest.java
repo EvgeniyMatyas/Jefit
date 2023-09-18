@@ -8,7 +8,7 @@ import static org.testng.Assert.*;
 public class BlogTest extends BaseTest {
 
     @Test(description = "Open popular post page")
-    public void PopularPostPageShouldBeOpenedTest() {
+    public void openPopularPostPage() {
         loginPage
                 .open()
                 .loginWithValidData();
@@ -21,7 +21,7 @@ public class BlogTest extends BaseTest {
     }
 
     @Test(description = "Open category page")
-    public void CategoryPageShouldBeOpenedTest() {
+    public void openCategoryPage() {
         loginPage
                 .open()
                 .loginWithValidData();

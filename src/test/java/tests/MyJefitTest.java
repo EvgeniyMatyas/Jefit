@@ -15,12 +15,12 @@ public class MyJefitTest extends BaseTest {
                 .open()
                 .loginWithValidData()
                 .clickHomeButton()
-                .writeStatus("My new Status")
+                .writeStatus()
                 .clickPostButton()
                 .pageRefresh();
         String actualStatus = myJefitPage.getStatusText();
 
-        assertEquals(actualStatus, "My new Status", "Еhe file didn't load");
+        assertEquals(actualStatus, "My new status", "Еhe file didn't load");
 
     }
 

@@ -7,7 +7,7 @@ import static org.testng.Assert.*;
 public class ExercisesTest extends BaseTest {
 
     @Test(description = "Open Exercise page")
-    public void exercisePageShouldBeOpenedTest() {
+    public void openExercisePage() {
         loginPage
                 .open()
                 .loginWithValidData();
@@ -20,7 +20,7 @@ public class ExercisesTest extends BaseTest {
     }
 
     @Test(description = "Open body part page")
-    public void bodyPartPageShouldBeOpenedTest() {
+    public void openBodyPartPage() {
         loginPage
                 .open()
                 .loginWithValidData();

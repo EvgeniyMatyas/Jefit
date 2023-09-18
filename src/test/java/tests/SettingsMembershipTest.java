@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 public class SettingsMembershipTest extends BaseTest {
 
     @Test(description = "Open Member Ship Settings page")
-    public void memberShipSettingsShouldBeOpenedTest() {
+    public void openMemberShipSettings() {
         loginPage
                 .open()
                 .loginWithValidData();

@@ -15,6 +15,7 @@ public class MyJefitPage extends BasePage{
 
     public static final By MY_JEFIT_TITTLE = By.xpath("//a[text()='Home']");
     public static final By STATUS_TEXT= By.xpath("(//div[@class='col-8'])[2]");
+    String newStatus= "My new status";
 
     public MyJefitPage(WebDriver driver) {
         super(driver);
@@ -34,8 +35,8 @@ public class MyJefitPage extends BasePage{
     }
 
     @Step("Write a status")
-    public MyJefitPage writeStatus(String statusText){
-        new TextArea(driver, "statusinputbox").write(statusText);
+    public MyJefitPage writeStatus(){
+        new TextArea(driver, "statusinputbox").write(newStatus);
         log.info("Input the status in the field: ");
         return this;
     }

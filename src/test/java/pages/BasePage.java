@@ -32,6 +32,7 @@ public abstract class BasePage {
         try {
             return driver.findElement(locator).isDisplayed();
         }catch (NoSuchElementException e){
+            log.error("Page is not loaded");
             return false;
         }
 }

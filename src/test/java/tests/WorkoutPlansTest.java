@@ -8,7 +8,7 @@ import static org.testng.Assert.*;
 public class WorkoutPlansTest extends BaseTest {
 
     @Test(description = "Open Workout Plans")
-    public void workoutPlansShouldBeOpenedTest() {
+    public void openWorkoutPlans() {
         loginPage
                 .open()
                 .loginWithValidData();
