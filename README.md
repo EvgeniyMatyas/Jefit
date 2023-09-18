@@ -10,6 +10,7 @@ Testing of [JEFIT](https://www.jefit.com/login/) website.Popular workout creatin
 
 - Page Object
 - Chain of invocation
+- Loadable Page
 
 ### Used technologies:
 
