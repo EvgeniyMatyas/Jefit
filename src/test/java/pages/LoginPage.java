@@ -31,7 +31,7 @@ public class LoginPage extends BasePage{
         new Input(driver, "vb_login_username").write(email);
         log.info("Input the USERNAME or EMAIL in the field");
         new Input(driver, "vb_login_password").write(password);
-        log.info("Input password " );
+        log.info("Input password in the field " );
         return this;
     }
 
@@ -51,9 +51,9 @@ public class LoginPage extends BasePage{
 
     }
 
-    @Step("Get an error message")
+    @Step("Get a error message")
     public String getErrorMessage() {
-        log.info("Get the error text by :" +ERROR_MESSAGE);
+        log.info("Get the error text" );
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 

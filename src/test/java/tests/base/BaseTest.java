@@ -47,7 +47,7 @@ public class BaseTest {
 
     @Step("Setting up and opening the browser")
     @BeforeMethod
-    public void setUp(ITestContext context){
+    public void setUp(){
         baseUrl = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
         email = System.getenv().getOrDefault("JEFIT_EMAIL", PropertyReader.getProperty("jefit.email"));
         password = System.getenv().getOrDefault("JEFIT_PASSWORD", PropertyReader.getProperty("jefit.password"));

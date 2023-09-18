@@ -21,7 +21,7 @@ public class Input {
         driver.findElement(By.xpath(String.format(inputLocator, this.label))).clear();
         log.info("Clear input with label  " + this.label);
         driver.findElement(By.xpath(String.format(inputLocator, this.label))).sendKeys(text);
-        log.info("Write into input with label: " + this.label + "text: " + text);
+        log.info("Write into input with label: " + this.label );
     }
 
     public void aboutMeWrite(String text) {
