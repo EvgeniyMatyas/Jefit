@@ -9,8 +9,7 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 public class WorkoutPlansPage extends BasePage {
     public static final By JEFIT_WORKOUT_ROUTINE_DATABASE = By.xpath("//span[text()='JEFIT Workout Routine Database']");
-    public static final By SEARCH_BUTTON = By.xpath("//input[@value='Search']");
-    String exerciseNameLocator= "//div[contains(@style, 'ellipsis')] ";
+
 
     public WorkoutPlansPage(WebDriver driver) {
         super(driver);
@@ -25,10 +24,6 @@ public class WorkoutPlansPage extends BasePage {
     }
 
 
-    @Step("Get Exercise name")
-    public void getExerciseName() {
-        driver.findElement(By.xpath(exerciseNameLocator)).getText();
-    }
 
     @Override
     @Step("Find element to make sure the page is open")

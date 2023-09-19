@@ -1,6 +1,8 @@
 package tests;
 
 
+import models.Status;
+import models.StatusFactory;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -13,14 +15,13 @@ public class MyJefitTest extends BaseTest {
     public void writeAStatus(){
         loginPage
                 .open()
-                .loginWithValidData()
-                .clickHomeButton()
-                .writeStatus()
-                .clickPostButton()
-                .pageRefresh();
-        String actualStatus = myJefitPage.getStatusText();
+                .loginWithValidData();
 
-        assertEquals(actualStatus, "My new status", "Еhe file didn't load");
+        Status status = StatusFactory.get();
+
+        myJefitPage.writingTheStatus(status);
+
+        assertEquals(myJefitPage.getStatusText(), myJefitPage.returnFakerText(), "Еhe file didn't load");
 
     }
 

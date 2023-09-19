@@ -20,7 +20,7 @@ public class ExercisesTest extends BaseTest {
     }
 
     @Test(description = "Open body part page")
-    public void openBodyPartPage() {
+    public void selectingAnExerciseFromTheList() {
         loginPage
                 .open()
                 .loginWithValidData();

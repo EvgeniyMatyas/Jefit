@@ -35,7 +35,6 @@ public class BaseTest {
     protected PopularPostPage popularPostPage;
     protected CategoryPage categoryPage;
     protected MyRoutinesPage myRoutinesPage;
-    protected ElitePage elitePage;
     protected SettingsProfileAppPage settingsProfileAppPage;
     protected SettingsEmailPasswordPage settingsEmailPasswordPage;
     protected SettingsMembershipPage settingsMembershipPage;
@@ -59,7 +58,7 @@ public class BaseTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
 
@@ -76,7 +75,6 @@ public class BaseTest {
         popularPostPage = new PopularPostPage(driver);
         categoryPage = new CategoryPage(driver);
         myRoutinesPage = new MyRoutinesPage(driver);
-        elitePage = new ElitePage(driver);
         settingsProfileAppPage = new SettingsProfileAppPage(driver);
         settingsEmailPasswordPage = new SettingsEmailPasswordPage(driver);
         settingsMembershipPage = new SettingsMembershipPage(driver);

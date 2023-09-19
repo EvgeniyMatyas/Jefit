@@ -9,7 +9,7 @@ Testing of [JEFIT](https://www.jefit.com/login/) website.Popular workout creatin
 ### Following patterns were used:
 
 - Page Object
-- Chain of invocation
+- Fluent/Chain of invocation
 - Loadable Page
 
 ### Used technologies:
@@ -44,10 +44,6 @@ Testing of [JEFIT](https://www.jefit.com/login/) website.Popular workout creatin
 
 - Choosing and opening a popular post
 - Choosing and opening a category post
-
-#### **_- Elite page:_**
-
-- Opening the Elite page
 
 #### **_-Exercise page:_**
 
@@ -104,6 +100,9 @@ Testing of [JEFIT](https://www.jefit.com/login/) website.Popular workout creatin
 - jefit.url = https://www.jefit.com/
 - jefit.email = uwucde@mailto.plus
 - jefit.password = 77721185948934James*
+
+## Presentation
+- https://docs.google.com/presentation/d/1ShZUVui0aGSjDc4j6HHB5BUUYbji1-2uk6pIO-N53gc/edit?usp=sharing
 
 
 

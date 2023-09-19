@@ -16,12 +16,7 @@ public class MyLogsPage extends BasePage {
         super(driver);
     }
 
-    @Override
-    @Step("Find element to make sure the page is open")
-    public boolean isPageOpen() {
-        log.info("Find element : " + LOGS_TITLE);
-        return isExist(LOGS_TITLE);
-    }
+
 
     @Step("Open My Logs")
     public MyLogsPage openMyLogs() {
@@ -30,15 +25,23 @@ public class MyLogsPage extends BasePage {
     }
 
     @Step("Open Logs For Day")
-    public void openLogsForDay() {
+    public MyLogsPage openLogsForDay() {
         driver.findElement(CALENDAR_DAY_LOGS).click();
         log.info("Click Calendar day logs by " + CALENDAR_DAY_LOGS);
+        return this;
     }
 
     @Step("Make sure the Body stats is opened")
     public boolean editBodyStatsIsDisplayed() {
         log.info("Find element : " + EDIT_BODY_STATS);
         return driver.findElement(EDIT_BODY_STATS).isDisplayed();
+    }
+
+    @Override
+    @Step("Find element to make sure the page is open")
+    public boolean isPageOpen() {
+        log.info("Find element : " + LOGS_TITLE);
+        return isExist(LOGS_TITLE);
     }
 
 }

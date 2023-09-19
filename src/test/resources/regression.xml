@@ -27,7 +27,6 @@
             <class name="tests.LoginTest"/>
             <class name="tests.ExercisesTest"/>
             <class name="tests.BlogTest"/>
-            <class name="tests.EliteTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

@@ -16,6 +16,7 @@ public class CategoryPage extends BasePage{
     }
 
     public String getCategoryName() {
+        log.info("Get category text ");
         return driver.findElement(By.xpath(postNameLocator)).getText();
 
     }

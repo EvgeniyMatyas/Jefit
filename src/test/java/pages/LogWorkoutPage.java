@@ -44,12 +44,12 @@ public class LogWorkoutPage extends BasePage {
 
     @Step("Get text by faker")
     public String returnNoteFakerText() {
-        log.info("Return text : " + text);
+        log.info("Return text " );
         return text;
     }
 
     @Step("Get Note value")
-    public String getNoteText() throws InterruptedException {
+    public String getNoteText()  {
         String[] value = driver.findElement(NOTE_TEXT).getText().split(":");
         log.info("Return " + value[1].trim());
         return value[1].trim();
@@ -65,18 +65,19 @@ public class LogWorkoutPage extends BasePage {
     }
 
     @Step("Delete Note")
-    public void deleteNote() {
+    public LogWorkoutPage deleteNote() {
         new IdButton(driver, "edit-note").click();
         WebElement button = driver.findElement(DELETE_NOTE);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
         log.info("Click on Delete button");
- //       driver.findElement(DELETE_NOTE).click();
         new IdButton(driver, "save-note").click();
+        return this;
     }
 
     @Step("Delete body stats")
-    public void deleteBodyStats() {
+    public LogWorkoutPage deleteBodyStats() {
         new IdButton(driver, "delete-body-stats").click();
+        return this;
     }
 
     @Step("Click Add Body Stats Button")

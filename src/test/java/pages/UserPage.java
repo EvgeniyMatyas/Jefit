@@ -16,7 +16,7 @@ public class UserPage extends BasePage{
 
     public static final By USER_NAME_TITTLE = By.xpath("//span[text()='Weight']/ancestor::div[@class='aboutmeBox']");
     String fieldValue = "//span[text()='%s']/parent::div";
-    public static final By ABOUT_ME_LIST = By.xpath("//span[@style='font-weight: bold']/parent::div");
+
 
     public UserPage(WebDriver driver) {
         super(driver);
@@ -43,10 +43,6 @@ public class UserPage extends BasePage{
         return value[1].trim();
     }
 
-    public boolean getSizeListOfAboutMe(){
-        List<WebElement> list = driver.findElements(ABOUT_ME_LIST);
-        return list.equals(list);
-    }
 
 
     @Override

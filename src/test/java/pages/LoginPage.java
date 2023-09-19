@@ -53,7 +53,7 @@ public class LoginPage extends BasePage{
 
     @Step("Get a error message")
     public String getErrorMessage() {
-        log.info("Get the error text" );
+        log.error("Get the error text" );
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 

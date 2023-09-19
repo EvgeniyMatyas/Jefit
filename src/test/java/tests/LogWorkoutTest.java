@@ -43,7 +43,7 @@ public class LogWorkoutTest extends BaseTest {
 
 
     @Test(description = "Create Note")
-    public void noteCreate() throws InterruptedException {
+    public void noteCreate() {
         loginPage
                 .open()
                 .loginWithValidData();
